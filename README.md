@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/32445390/README.md)
 # erbasstudios.github.io — site dosyaları
 
 Bu klasör, `erbasstudios/erbasstudios.github.io` reposunun **birebir aynısı** olacak şekilde tutulur. Buradaki
@@ -12,13 +11,17 @@ dosyaları olduğu gibi reponun köküne yükle; yapı bozulmaz.
 ├── app-ads.txt          AdMob yayıncı doğrulaması — ZORUNLU olarak kökte (bu klasörde yok, repoda duruyor)
 ├── gizlilik.html        Yumo'nun politikası — eski bağlantı, taşıma (Play Console'da kayıtlı)
 └── rainroutes/
-    └── gizlilik.html    Rain Routes'un politikası
+    └── privacy.html     Rain Routes'un politikası
 ```
 
-Yeni bir oyun eklerken: köke `<oyunadi>/gizlilik.html` aç ve `index.html`'e bir kart ekle. Başka bir şey
+Yeni bir oyun eklerken: köke `<gameid>/privacy.html` aç ve `index.html`'e bir kart ekle. Başka bir şey
 gerekmez.
 
 ## Kurallar
+
+**Dosya ve klasör adları İngilizce.** Site iki mağazaya ve her ülkeye bakıyor; adres çubuğunda ve mağaza
+formlarında görünen her şey İngilizce olur (`privacy.html`, `rainroutes/`). Sayfaların **içeriği** iki dilli
+kalır, İngilizce önce. Kökteki `gizlilik.html` bu kuralın dışında: Yumo'nun yayındaki bağlantısı, taşınmıyor.
 
 **`app-ads.txt` kökten çıkmaz.** IAB standardı onu `https://<alan-adı>/app-ads.txt` adresinde arar; alt klasöre
 konursa AdMob doğrulaması kırılır. İçindeki yayıncı kimliği bütün oyunlar için ortaktır, oyun eklenince
