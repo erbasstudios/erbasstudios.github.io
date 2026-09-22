@@ -1,62 +1,40 @@
 <!DOCTYPE html>
-<!-- Studio landing page for erbasstudios.github.io. Until this existed the site root answered 404, which is
-     what AdMob and the stores show when they link to the developer's website. Keep it small: one card per
-     game, each linking to that game's privacy policy under its own folder. -->
+<!-- Studio landing page. AdMob and the app stores link here as the developer website.
+     Add one .game card per title; each game keeps its own folder (/<game>/privacy.html). -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Erbas Studios</title>
-<meta name="description" content="Erbas Studios — mobil bulmaca ve refleks oyunları.">
-<style>
-  :root {
-    --bg: #f6eede; --ink: #2f4438; --soft: #eee6d6; --line: #e2d6c0; --muted: #6b7d70; --teal: #2f7f80;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0; padding: 0 16px 64px; background: var(--bg); color: var(--ink);
-    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  }
-  main { max-width: 640px; margin: 0 auto; }
-  header { padding: 64px 0 8px; }
-  h1 { font-size: 32px; margin: 0 0 6px; }
-  .sub { color: var(--muted); margin: 0 0 36px; }
-  .game {
-    display: block; background: var(--soft); border: 1px solid var(--line);
-    border-radius: 14px; padding: 20px 22px; margin: 14px 0; text-decoration: none; color: inherit;
-  }
-  .game h2 { font-size: 20px; margin: 0 0 4px; }
-  .game p { margin: 0; color: var(--muted); font-size: 15px; }
-  .game .link { color: var(--teal); font-size: 15px; display: inline-block; margin-top: 10px; }
-  footer { margin-top: 44px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 15px; }
-  a { color: var(--teal); }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg: #1b241e; --ink: #e8efe8; --soft: #232e26; --line: #35443a; --muted: #9bb0a2; --teal: #6fc0bf; }
-  }
-</style>
+<meta name="description" content="Erbas Studios is an independent studio making calm, offline-friendly mobile games.">
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
 <main>
 
 <header>
   <h1>Erbas Studios</h1>
-  <p class="sub">Mobile games · Mobil oyunlar</p>
+  <p class="sub">Independent mobile games — calm, offline-friendly, no accounts.</p>
 </header>
 
-<a class="game" href="rainroutes/privacy.html">
-  <h2>Rain Routes</h2>
-  <p>A calm puzzle about guiding rain through gutters to revive drying gardens. No timer, no lives.
-     · Yağmuru oluklarla yönlendirip kuruyan bahçeleri canlandırdığın sakin bir bulmaca.</p>
-  <span class="link">Privacy policy / Gizlilik politikası →</span>
-</a>
-
-<a class="game" href="gizlilik.html">
+<section class="game">
   <h2>Yumo</h2>
-  <span class="link">Privacy policy / Gizlilik politikası →</span>
-</a>
+  <p>A physics merge puzzle: drop orbs, merge matching ones and grow them into planets. Classic, Sprint, Calm and Downpour modes, daily boards and a weekly table.</p>
+  <div class="links">
+    <a href="/yumo/privacy.html">Privacy policy</a>
+  </div>
+</section>
+
+<section class="game">
+  <h2>Rain Routes</h2>
+  <p>A calm puzzle about guiding rain through gutters to revive drying gardens. No timer, no lives.</p>
+  <div class="links">
+    <a href="/rainroutes/privacy.html">Privacy policy</a>
+  </div>
+</section>
 
 <footer>
-  Contact / İletişim: <a href="mailto:erbasstudios@gmail.com">erbasstudios@gmail.com</a>
+  Contact: <a href="mailto:erbasstudios@gmail.com">erbasstudios@gmail.com</a>
 </footer>
 
 </main>

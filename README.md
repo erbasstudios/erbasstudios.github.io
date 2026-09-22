@@ -1,45 +1,45 @@
-# erbasstudios.github.io — site dosyaları
+# erbasstudios.github.io
 
-Bu klasör, `erbasstudios/erbasstudios.github.io` reposunun **birebir aynısı** olacak şekilde tutulur. Buradaki
-dosyaları olduğu gibi reponun köküne yükle; yapı bozulmaz.
+Public website of **Erbas Studios**, served by GitHub Pages at <https://erbasstudios.github.io>.
+It holds only public, store-facing pages: the studio landing page, each game's privacy policy and
+`app-ads.txt`. **Game source code does not live here** — every game has its own private repository
+(`erbasstudios/yumo`, `erbasstudios/rainroutes`, …).
 
-## Yapı
+## Layout
 
 ```
-/                        https://erbasstudios.github.io/
-├── index.html           stüdyo ana sayfası, oyunları listeler
-├── app-ads.txt          AdMob yayıncı doğrulaması — ZORUNLU olarak kökte (bu klasörde yok, repoda duruyor)
-├── gizlilik.html        Yumo'nun politikası — eski bağlantı, taşıma (Play Console'da kayıtlı)
+/
+├── index.html            Studio landing page — one card per game
+├── 404.html              Not-found page
+├── app-ads.txt           AdMob publisher verification — MUST stay at the site root
+├── assets/
+│   └── site.css          Shared styles for every page
+├── gizlilik.html         LEGACY redirect → /yumo/privacy.html (never delete, see below)
+├── yumo/
+│   └── privacy.html      Yumo privacy policy (English, then Turkish at #tr)
 └── rainroutes/
-    └── privacy.html     Rain Routes'un politikası
+    └── privacy.html      Rain Routes privacy policy
 ```
 
-Yeni bir oyun eklerken: köke `<gameid>/privacy.html` aç ve `index.html`'e bir kart ekle. Başka bir şey
-gerekmez.
+## Adding a new game
 
-## Kurallar
+1. Create a folder named after the game in lowercase, no spaces: `/<game>/`.
+2. Add `/<game>/privacy.html` (copy `yumo/privacy.html` as a template, link `/assets/site.css`).
+3. Add a `.game` card to `index.html`.
+4. Put `https://erbasstudios.github.io/<game>/privacy.html` into Play Console / App Store Connect.
 
-**Dosya ve klasör adları İngilizce.** Site iki mağazaya ve her ülkeye bakıyor; adres çubuğunda ve mağaza
-formlarında görünen her şey İngilizce olur (`privacy.html`, `rainroutes/`). Sayfaların **içeriği** iki dilli
-kalır, İngilizce önce. Kökteki `gizlilik.html` bu kuralın dışında: Yumo'nun yayındaki bağlantısı, taşınmıyor.
+## Rules
 
-**`app-ads.txt` kökten çıkmaz.** IAB standardı onu `https://<alan-adı>/app-ads.txt` adresinde arar; alt klasöre
-konursa AdMob doğrulaması kırılır. İçindeki yayıncı kimliği bütün oyunlar için ortaktır, oyun eklenince
-değişmez.
+- **English file and folder names.** URLs appear in store listings worldwide. Page content is English
+  first; other languages follow on the same page with an anchor (e.g. `#tr`).
+- **`app-ads.txt` never leaves the root.** The IAB standard looks for it at `https://<domain>/app-ads.txt`.
+  The publisher ID inside is shared by all games.
+- **A published URL is never removed.** Stores and older app versions keep linking to it. Move a page by
+  leaving a redirect behind (see `gizlilik.html`), then update the store listing.
+- **Each game has its own policy.** Games collect different data; a shared policy would be inaccurate.
+- **Keep policies true.** A policy must describe what the current app version actually does.
 
-**Yayında olan bir URL taşınmaz.** `gizlilik.html` Yumo'nun Play Console kaydında duruyor; kökten
-`yumo/gizlilik.html`'e taşınırsa o bağlantı kırılır. Taşımak istersen önce Console'daki URL'i güncelle.
+## Custom domain
 
-**Her oyunun kendi politikası olur.** Oyunlar farklı veri topladığı için ortak politika yanlış beyan olur:
-Yumo AdMob kullanıp reklam kimliği topluyor, Rain Routes bugün hiçbir şey toplamıyor.
-
-## Yükleme
-
-GitHub'da repo → Add file → Upload files → bu klasörün içeriğini sürükle → commit. Pages ayarı zaten açık,
-değişiklik birkaç dakikada yayına girer.
-
-## Alan adı alınırsa
-
-`erbasstudios.com` gibi bir alan adı alınırsa yapı aynen korunur: repo Settings → Pages → Custom domain'e
-yazılır, `app-ads.txt` yeni alan adının kökünde yayınlanır ve AdMob'daki geliştirici sitesi alanı güncellenir.
-Politika URL'leri değişeceği için Play Console ve App Store Connect kayıtları da güncellenmelidir.
+If a domain (e.g. `erbasstudios.com`) is bought: Settings → Pages → Custom domain. The layout stays the
+same; update the developer website in AdMob and the privacy URLs in the store listings.
