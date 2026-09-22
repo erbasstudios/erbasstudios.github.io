@@ -10,7 +10,7 @@ It holds only public, store-facing pages: the studio landing page, each game's p
 ```
 /
 ├── index.html            Studio landing page — one card per game
-├── 404.html              Not-found page + forwards moved URLs (see below)
+├── 404.html              Not-found page
 ├── app-ads.txt           AdMob publisher verification — MUST stay at the site root
 ├── assets/
 │   └── site.css          Shared styles for every page
@@ -33,9 +33,8 @@ It holds only public, store-facing pages: the studio landing page, each game's p
   first; other languages follow on the same page with an anchor (e.g. `#tr`).
 - **`app-ads.txt` never leaves the root.** The IAB standard looks for it at `https://<domain>/app-ads.txt`.
   The publisher ID inside is shared by all games.
-- **A published URL must keep working.** Stores and older app versions keep linking to it. When a page
-  moves, add the old path to the `moved` map in `404.html` (e.g. `/gizlilik.html` → `/yumo/privacy.html`),
-  then update the store listing.
+- **Update the store listing when a URL changes.** Change the privacy URL in Play Console / App Store
+  Connect in the same step as moving a page.
 - **Each game has its own policy.** Games collect different data; a shared policy would be inaccurate.
 - **Keep policies true.** A policy must describe what the current app version actually does.
 
