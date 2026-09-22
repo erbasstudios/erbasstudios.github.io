@@ -2,8 +2,7 @@
 
 Public website of **Erbas Studios**, served by GitHub Pages at <https://erbasstudios.github.io>.
 It holds only public, store-facing pages: the studio landing page, each game's privacy policy and
-`app-ads.txt`. **Game source code does not live here** — every game has its own private repository
-(`erbasstudios/yumo`, `erbasstudios/rainroutes`, …).
+`app-ads.txt`. **Game source code does not live here** — every game has its own private repository.
 
 ## Layout
 
