@@ -6,6 +6,15 @@
 <title>Page not found — Erbas Studios</title>
 <meta name="robots" content="noindex">
 <link rel="stylesheet" href="/assets/site.css">
+<script>
+  // Moved pages. GitHub Pages serves this file for every missing path, so old links that are still
+  // printed in older app versions are forwarded here instead of keeping a stub file in the repo.
+  (function () {
+    var moved = { '/gizlilik.html': '/yumo/privacy.html#tr' };
+    var target = moved[location.pathname];
+    if (target) location.replace(target);
+  })();
+</script>
 </head>
 <body>
 <main>
